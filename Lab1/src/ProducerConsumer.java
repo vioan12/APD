@@ -31,10 +31,10 @@ public class ProducerConsumer
             throw new Exception("Queue is empty!!");
         }
     }
-    public void ConsoleWrite()
+    public void ConsoleWrite(String threadType, long threadId)
     {
         Iterator<Integer> iterator=queue.iterator();
-        System.out.print("|");
+        System.out.print(threadType+"Thread"+threadId+": |");
         while(iterator.hasNext()){
             System.out.print(iterator.next() + "|");
         }
