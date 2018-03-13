@@ -1,3 +1,1 @@
-# APD
-
-Algoritmi Paraleli si Distribuiti
+# Algoritmi Paraleli si Distribuiti
