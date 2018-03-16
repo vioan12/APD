@@ -31,6 +31,22 @@ public class ProducerConsumer
             throw new Exception("Queue is empty!!");
         }
     }
+    public boolean isFull()
+    {
+        if(queue.size() < size){
+            return false;
+        }else {
+            return true;
+        }
+    }
+    public boolean isEmpty()
+    {
+        if(queue.size() > 0){
+            return false;
+        }else {
+            return true;
+        }
+    }
     public void consoleWrite(String threadType, long threadId)
     {
         Iterator<Integer> iterator=queue.iterator();
