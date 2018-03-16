@@ -1,4 +1,3 @@
-import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Lock;
 
 /**
@@ -8,32 +7,27 @@ public class ConsumerThread extends Thread
 {
     private ProducerConsumer producerConsumer;
     private static Lock lockQueue;
-    private static Semaphore semaphoreFree, semaphoreFull;
-    ConsumerThread(ProducerConsumer producerConsumer, Lock lockQueue, Semaphore semaphoreFree, Semaphore semaphoreFull)
+    ConsumerThread(ProducerConsumer producerConsumer, Lock lockQueue)
     {
         this.producerConsumer = producerConsumer;
         ConsumerThread.lockQueue = lockQueue;
-        ConsumerThread.semaphoreFree = semaphoreFree;
-        ConsumerThread.semaphoreFull = semaphoreFull;
     }
     public void run()
     {
         while (true) {
-            semaphoreFull.acquireUninterruptibly(1);
             try {
                 lockQueue.lock();
-                producerConsumer.Remove();
-                producerConsumer.ConsoleWrite("Consumer", this.getId());
+                producerConsumer.remove();
+                producerConsumer.consoleWrite("Consumer", this.getId());
             }catch (Exception exception){
-                System.out.println(exception);
+                System.out.println(exception.getMessage());
             }finally {
                 lockQueue.unlock();
             }
-            semaphoreFree.release(1);
             try {
                 sleep(Constants.sleepTimeConsumer);
             }catch (Exception exception){
-                System.out.println(exception);
+                System.out.println(exception.getMessage());
             }
         }
     }

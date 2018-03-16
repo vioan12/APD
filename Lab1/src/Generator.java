@@ -3,5 +3,5 @@
  */
 public interface Generator
 {
-    public int next();
+    int next();
 }

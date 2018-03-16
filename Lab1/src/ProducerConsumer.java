@@ -13,7 +13,7 @@ public class ProducerConsumer
         queue = new LinkedList<Integer>();
         this.size = size;
     }
-    public void Add(int item)
+    public void add(int item)
             throws Exception
     {
         if(queue.size() < size){
@@ -22,7 +22,7 @@ public class ProducerConsumer
             throw new Exception("Queue is full!!");
         }
     }
-    public void Remove()
+    public void remove()
             throws Exception
     {
         if(queue.size() > 0){
@@ -31,7 +31,7 @@ public class ProducerConsumer
             throw new Exception("Queue is empty!!");
         }
     }
-    public void ConsoleWrite(String threadType, long threadId)
+    public void consoleWrite(String threadType, long threadId)
     {
         Iterator<Integer> iterator=queue.iterator();
         System.out.print(threadType+"Thread"+threadId+": |");

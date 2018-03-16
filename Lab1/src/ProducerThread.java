@@ -1,4 +1,3 @@
-import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Lock;
 
 /**
@@ -9,34 +8,29 @@ public class ProducerThread extends Thread
     private ProducerConsumer producerConsumer;
     private static StdGenerator generator;
     private static Lock lockQueue;
-    private static Semaphore semaphoreFree, semaphoreFull;
-    ProducerThread(ProducerConsumer producerConsumer, Lock lockQueue, Semaphore semaphoreFree, Semaphore semaphoreFull)
+    ProducerThread(ProducerConsumer producerConsumer, Lock lockQueue)
     {
         this.producerConsumer = producerConsumer;
         ProducerThread.lockQueue = lockQueue;
         generator = new StdGenerator(Constants.maxNumberGenerated);
-        ProducerThread.semaphoreFree = semaphoreFree;
-        ProducerThread.semaphoreFull = semaphoreFull;
     }
     public void run()
     {
         while (true){
             int newItem = generator.next();
-            semaphoreFree.acquireUninterruptibly(1);
             try {
                 lockQueue.lock();
-                producerConsumer.Add(newItem);
-                producerConsumer.ConsoleWrite("Producer", this.getId());
+                producerConsumer.add(newItem);
+                producerConsumer.consoleWrite("Producer", this.getId());
             }catch (Exception exception){
-                System.out.println(exception);
+                System.out.println(exception.getMessage());
             }finally {
                 lockQueue.unlock();
             }
-            semaphoreFull.release(1);
             try {
                 sleep(Constants.sleepTimeProducer);
             }catch (Exception exception){
-                System.out.println(exception);
+                System.out.println(exception.getMessage());
             }
         }
     }

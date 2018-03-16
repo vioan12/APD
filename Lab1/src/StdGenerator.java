@@ -6,15 +6,14 @@ import java.util.Random;
 public class StdGenerator implements Generator
 {
     private Random randomGenerator;
-    private int max;
-
-    StdGenerator(int valueofmax){
-        randomGenerator= new Random();
-        max=valueofmax;
+    private int maxValue;
+    StdGenerator(int maxValue){
+        randomGenerator = new Random();
+        this.maxValue = maxValue;
     }
     @Override
     public int next() {
-        int x=randomGenerator.nextInt(max);
-        return x;
+        int value = randomGenerator.nextInt(maxValue);
+        return value;
     }
 }
