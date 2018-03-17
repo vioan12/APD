@@ -5,17 +5,23 @@ import java.util.concurrent.locks.Lock;
  */
 public class ConsumerThread extends Thread
 {
-    private ProducerConsumer producerConsumer;
-    private static Lock lockQueue;
-    ConsumerThread(ProducerConsumer producerConsumer, Lock lockQueue)
+    private final ProducerConsumer producerConsumer;
+    private final Lock lockQueue;
+    private final Object isEmpty, isFull;
+    ConsumerThread(ProducerConsumer producerConsumer, Lock lockQueue, Object isEmpty, Object isFull)
     {
         this.producerConsumer = producerConsumer;
-        ConsumerThread.lockQueue = lockQueue;
+        this.lockQueue = lockQueue;
+        this.isEmpty = isEmpty;
+        this.isFull = isFull;
     }
     public void run()
     {
         while (true) {
             try {
+                if(producerConsumer.isEmpty()){
+                    isEmpty.wait();
+                }
                 lockQueue.lock();
                 producerConsumer.remove();
                 producerConsumer.consoleWrite("Consumer", this.getId());
@@ -24,6 +30,7 @@ public class ConsumerThread extends Thread
             }finally {
                 lockQueue.unlock();
             }
+            isFull.notify();
             try {
                 sleep(Constants.sleepTimeConsumer);
             }catch (Exception exception){

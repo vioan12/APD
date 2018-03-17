@@ -6,8 +6,8 @@ import java.util.LinkedList;
  */
 public class ProducerConsumer
 {
-    private LinkedList<Integer> queue;
-    private int size;
+    private final LinkedList<Integer> queue;
+    private final int size;
     ProducerConsumer(int size)
     {
         queue = new LinkedList<Integer>();
@@ -33,19 +33,19 @@ public class ProducerConsumer
     }
     public boolean isFull()
     {
-        if(queue.size() < size){
-            return false;
-        }else {
-            return true;
+        boolean retVal;
+        synchronized (queue){
+            retVal = (queue.size() == size);
         }
+        return retVal;
     }
     public boolean isEmpty()
     {
-        if(queue.size() > 0){
-            return false;
-        }else {
-            return true;
+        boolean retVal;
+        synchronized (queue){
+            retVal = (queue.size() == 0);
         }
+        return retVal;
     }
     public void consoleWrite(String threadType, long threadId)
     {
