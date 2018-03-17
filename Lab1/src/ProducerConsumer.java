@@ -16,18 +16,18 @@ public class ProducerConsumer
     public void add(int item)
             throws Exception
     {
-        if(queue.size() < size){
+        if (queue.size() < size) {
             queue.add(item);
-        }else {
+        } else {
             throw new Exception("Queue is full!!");
         }
     }
     public void remove()
             throws Exception
     {
-        if(queue.size() > 0){
+        if (queue.size() > 0) {
             queue.remove();
-        }else {
+        } else {
             throw new Exception("Queue is empty!!");
         }
     }
@@ -49,9 +49,9 @@ public class ProducerConsumer
     }
     public void consoleWrite(String threadType, long threadId)
     {
-        Iterator<Integer> iterator=queue.iterator();
-        System.out.print(threadType+"Thread"+threadId+": |");
-        while(iterator.hasNext()){
+        Iterator<Integer> iterator = queue.iterator();
+        System.out.print(threadType + "Thread" + threadId + ": |");
+        while (iterator.hasNext()) {
             System.out.print(iterator.next() + "|");
         }
         System.out.println("");

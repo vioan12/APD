@@ -7,12 +7,10 @@ public class ProducerThread extends Thread
 {
     private final ProducerConsumer producerConsumer;
     private final StdGenerator generator;
-    private final Lock lockQueue;
     private final Object isEmpty, isFull;
-    ProducerThread(ProducerConsumer producerConsumer, Lock lockQueue, Object isEmpty, Object isFull)
+    ProducerThread(ProducerConsumer producerConsumer, Object isEmpty, Object isFull)
     {
         this.producerConsumer = producerConsumer;
-        this.lockQueue = lockQueue;
         this.isEmpty = isEmpty;
         this.isFull = isFull;
         generator = new StdGenerator(Constants.maxNumberGenerated);
@@ -22,18 +20,21 @@ public class ProducerThread extends Thread
         while (true){
             int newItem = generator.next();
             try {
-                if(producerConsumer.isFull()){
-                    isFull.wait();
+                while (producerConsumer.isFull()){
+                    synchronized (isFull) {
+                        isFull.wait();
+                    }
                 }
-                lockQueue.lock();
-                producerConsumer.add(newItem);
-                producerConsumer.consoleWrite("Producer", this.getId());
-            }catch (Exception exception){
+                synchronized (producerConsumer) {
+                    producerConsumer.add(newItem);
+                    producerConsumer.consoleWrite("Producer", this.getId());
+                }
+            }catch (Exception exception) {
                 System.out.println(exception.getMessage());
-            }finally {
-                lockQueue.unlock();
             }
-            isEmpty.notify();
+            synchronized (isEmpty) {
+                isEmpty.notify();
+            }
             try {
                 sleep(Constants.sleepTimeProducer);
             }catch (Exception exception){
