@@ -20,8 +20,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="24" column="84" lean-forward="false" selection-start-line="24" selection-start-column="84" selection-end-line="24" selection-end-column="84" />
+            <state relative-caret-position="375">
+              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,7 +42,7 @@
       <file leaf-file-name="Thread.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Thread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
+            <state relative-caret-position="12366">
               <caret line="744" column="0" lean-forward="false" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
               <folding />
             </state>
@@ -52,8 +52,8 @@
       <file leaf-file-name="MPI.class" pinned="false" current-in-tab="false">
         <entry file="jar://C:/mpj/lib/mpj.jar!/mpi/MPI.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="30" />
+            <state relative-caret-position="504">
+              <caret line="49" column="30" lean-forward="false" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="30" />
               <folding>
                 <marker date="1429313708000" expanded="false" signature="0:104" ph="/.../" />
                 <marker date="1429313708000" expanded="false" signature="127:731" ph="..." />
@@ -136,10 +136,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -156,6 +152,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -599,11 +599,12 @@
       <workItem from="1521739130209" duration="669000" />
       <workItem from="1521820641870" duration="657000" />
       <workItem from="1521821582419" duration="10569000" />
+      <workItem from="1521832777404" duration="28000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33358000" />
+    <option name="totallyTimeSpent" value="33386000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -747,18 +748,11 @@
     <entry file="file://$PROJECT_DIR$/src/ProducerConsumer.java" />
     <entry file="file://$PROJECT_DIR$/src/ProducerThread.java" />
     <entry file="file://$PROJECT_DIR$/src/ConsumerThread.java" />
-    <entry file="file://$PROJECT_DIR$/src/Iterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Iterator.java" />
     <entry file="jar://C:/mpj/lib/mpj.jar!/mpi/MPI.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="30" />
+        <state relative-caret-position="504">
+          <caret line="49" column="30" lean-forward="false" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="30" />
           <folding>
             <marker date="1429313708000" expanded="false" signature="0:104" ph="/.../" />
             <marker date="1429313708000" expanded="false" signature="127:731" ph="..." />
@@ -786,7 +780,7 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
+        <state relative-caret-position="12366">
           <caret line="744" column="0" lean-forward="false" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
           <folding />
         </state>
@@ -802,8 +796,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="84" lean-forward="false" selection-start-line="24" selection-start-column="84" selection-end-line="24" selection-end-column="84" />
+        <state relative-caret-position="375">
+          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
