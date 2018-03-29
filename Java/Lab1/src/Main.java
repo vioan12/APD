@@ -1,47 +1,39 @@
 import mpi.*;
-import static java.lang.StrictMath.floor;
+
+import java.util.LinkedList;
 
 public class Main
 {
+    private static Generator generator;
     public static void main(String[] args)
     {
+        generator = new StdGenerator(Constants.maxNumbers);
         MPI.Init(args);
         int buffer[] = new int[2];
-        double buffer2[] = new double[1];
+        int size = MPI.COMM_WORLD.Size() ;
         int myRank = MPI.COMM_WORLD.Rank();
-        double sum = 0;
-        if(myRank == Constants.MASTER){
-            for(int k = 1; k < Constants.PROCESSORS_NUMBER; k ++) {
-                buffer[0] = (int) floor((float) (k * Constants.myVect.length - k) / Constants.PROCESSORS_NUMBER) + 1;
-                buffer[1] = (int) floor((float) ((k + 1) * Constants.myVect.length - (k + 1)) / Constants.PROCESSORS_NUMBER);
-                MPI.COMM_WORLD.Send(buffer,0,2, MPI.INT, k,0);
-            }
-            int i,j;
-            i = 0;
-            j = (int) floor((float)(( Constants.myVect.length - 1)) / Constants.PROCESSORS_NUMBER);
-            for(int k = i; k <= j; k++){
-                sum = sum + Constants.myVect[k];
-            }
-            System.out.println("[MASTER]: The partial sum of " + i +" to " + j +" is " + sum);
+        int generatedNumber = generator.next();
+        System.out.println("[PROCESS"+ myRank +"]: The generated number is " + generatedNumber);
+        if(myRank > 0){
+            buffer[0] = myRank;
+            buffer[1] = generatedNumber;
+            MPI.COMM_WORLD.Send(buffer,0,2, MPI.INT,0,0);
         }
-        if(myRank != Constants.MASTER) {
-            MPI.COMM_WORLD.Recv(buffer, 0, 2, MPI.INT, 0, 0);
-            int i,j;
-            i = buffer[0];
-            j = buffer[1];
-            for(int k = i; k <= j; k++){
-                sum = sum + Constants.myVect[k];
+        if(myRank == 0) {
+            int rank = 0;
+            int maxGeneratedNumber = generatedNumber;
+            for (int i = 1; i < size; i++) {
+                MPI.COMM_WORLD.Recv(buffer, 0, 2, MPI.INT, i, 0);
+                if(buffer[1] > maxGeneratedNumber){
+                    maxGeneratedNumber = buffer[1];
+                    rank = i;
+                } else {
+                    if((buffer[1] == maxGeneratedNumber) && (i > rank)) {
+                        rank = i;
+                    }
+                }
             }
-            buffer2[0] = sum;
-            System.out.println("[SLAVE"+ myRank +"]: The partial sum of " + i +" to " + j +" is " + buffer2[0]);
-            MPI.COMM_WORLD.Send(buffer2,0,1, MPI.DOUBLE,0,0);
-        }
-        if(myRank == Constants.MASTER){
-            for(int k = 1; k < Constants.PROCESSORS_NUMBER; k ++) {
-                MPI.COMM_WORLD.Recv(buffer2, 0, 1, MPI.DOUBLE, k, 0);
-                sum = sum + buffer2[0];
-            }
-            System.out.println("[MASTER]: The final sum is " + sum);
+            System.out.println("PROCESS MASTER is "+ rank +" with the generated number " + maxGeneratedNumber);
         }
         MPI.Finalize();
     }

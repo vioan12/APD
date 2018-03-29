@@ -20,8 +20,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            <state relative-caret-position="108">
+              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -32,50 +32,29 @@
       <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="105" lean-forward="false" selection-start-line="2" selection-start-column="105" selection-end-line="2" selection-end-column="105" />
+            <state relative-caret-position="72">
+              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Thread.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Thread.java">
+      <file leaf-file-name="StdGenerator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/StdGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12366">
-              <caret line="744" column="0" lean-forward="false" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MPI.class" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/mpj/lib/mpj.jar!/mpi/MPI.class">
+      <file leaf-file-name="Generator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Generator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="49" column="30" lean-forward="false" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="30" />
-              <folding>
-                <marker date="1429313708000" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1429313708000" expanded="false" signature="127:731" ph="..." />
-                <marker date="1429313708000" expanded="false" signature="3664:3671" ph="{}" />
-                <marker date="1429313708000" expanded="false" signature="3753:3789" ph="{...}" />
-                <marker date="1429313708000" expanded="false" signature="3850:4286" ph="{...}" />
-                <marker date="1429313708000" expanded="false" signature="4368:4379" ph=" { " />
-                <marker date="1429313708000" expanded="false" signature="4391:4397" ph=" }" />
-                <marker date="1429313708000" expanded="false" signature="4439:4450" ph=" { " />
-                <marker date="1429313708000" expanded="false" signature="4462:4468" ph=" }" />
-                <marker date="1429313708000" expanded="false" signature="4505:4516" ph=" { " />
-                <marker date="1429313708000" expanded="false" signature="4539:4545" ph=" }" />
-                <marker date="1429313708000" expanded="false" signature="4614:9356" ph="{...}" />
-                <marker date="1429313708000" expanded="false" signature="9412:10447" ph="{...}" />
-                <marker date="1429313708000" expanded="false" signature="10515:10819" ph="{...}" />
-                <marker date="1429313708000" expanded="false" signature="10904:10911" ph="{}" />
-                <marker date="1429313708000" expanded="false" signature="10981:11009" ph="{...}" />
-                <marker date="1429313708000" expanded="false" signature="11064:11132" ph="{...}" />
-                <marker date="1429313708000" expanded="false" signature="11187:11473" ph="{...}" />
-                <marker date="1429313708000" expanded="false" signature="11535:11570" ph="{...}" />
-                <marker date="1429313708000" expanded="false" signature="11583:12396" ph="{...}" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -99,13 +78,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ProducerConsumerThread.java" />
-        <option value="$PROJECT_DIR$/src/Generator.java" />
-        <option value="$PROJECT_DIR$/src/StdGenerator.java" />
         <option value="$PROJECT_DIR$/src/ProducerThread.java" />
         <option value="$PROJECT_DIR$/src/ConsumerThread.java" />
         <option value="$PROJECT_DIR$/src/ProducerConsumer.java" />
         <option value="$PROJECT_DIR$/src/Iterator.java" />
+        <option value="$PROJECT_DIR$/src/Generator.java" />
+        <option value="$PROJECT_DIR$/src/StdGenerator.java" />
         <option value="$PROJECT_DIR$/src/Constants.java" />
+        <option value="$PROJECT_DIR$/src/Process.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
@@ -136,6 +116,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,16 +134,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.customizations" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -600,11 +580,14 @@
       <workItem from="1521820641870" duration="657000" />
       <workItem from="1521821582419" duration="10569000" />
       <workItem from="1521832777404" duration="28000" />
+      <workItem from="1522259517087" duration="4376000" />
+      <workItem from="1522265148736" duration="2740000" />
+      <workItem from="1522319498578" duration="2972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33386000" />
+    <option name="totallyTimeSpent" value="43474000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -657,8 +640,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Generator.java" />
-    <entry file="file://$PROJECT_DIR$/src/Constants.java" />
     <entry file="file://$PROJECT_DIR$/src/StdGenerator.java" />
     <entry file="file://$PROJECT_DIR$/src/ProducerThread.java" />
     <entry file="file://$PROJECT_DIR$/src/ConsumerThread.java" />
@@ -743,61 +724,68 @@
     <entry file="file://$PROJECT_DIR$/src/Generator.java" />
     <entry file="file://$PROJECT_DIR$/src/StdGenerator.java" />
     <entry file="file://$PROJECT_DIR$/src/ConsumerThread.java" />
-    <entry file="file://$PROJECT_DIR$/src/Generator.java" />
-    <entry file="file://$PROJECT_DIR$/src/StdGenerator.java" />
     <entry file="file://$PROJECT_DIR$/src/ProducerConsumer.java" />
     <entry file="file://$PROJECT_DIR$/src/ProducerThread.java" />
     <entry file="file://$PROJECT_DIR$/src/ConsumerThread.java" />
     <entry file="file://$PROJECT_DIR$/src/Iterator.java" />
     <entry file="jar://C:/mpj/lib/mpj.jar!/mpi/MPI.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
+        <state relative-caret-position="0">
           <caret line="49" column="30" lean-forward="false" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="30" />
-          <folding>
-            <marker date="1429313708000" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1429313708000" expanded="false" signature="127:731" ph="..." />
-            <marker date="1429313708000" expanded="false" signature="3664:3671" ph="{}" />
-            <marker date="1429313708000" expanded="false" signature="3753:3789" ph="{...}" />
-            <marker date="1429313708000" expanded="false" signature="3850:4286" ph="{...}" />
-            <marker date="1429313708000" expanded="false" signature="4368:4379" ph=" { " />
-            <marker date="1429313708000" expanded="false" signature="4391:4397" ph=" }" />
-            <marker date="1429313708000" expanded="false" signature="4439:4450" ph=" { " />
-            <marker date="1429313708000" expanded="false" signature="4462:4468" ph=" }" />
-            <marker date="1429313708000" expanded="false" signature="4505:4516" ph=" { " />
-            <marker date="1429313708000" expanded="false" signature="4539:4545" ph=" }" />
-            <marker date="1429313708000" expanded="false" signature="4614:9356" ph="{...}" />
-            <marker date="1429313708000" expanded="false" signature="9412:10447" ph="{...}" />
-            <marker date="1429313708000" expanded="false" signature="10515:10819" ph="{...}" />
-            <marker date="1429313708000" expanded="false" signature="10904:10911" ph="{}" />
-            <marker date="1429313708000" expanded="false" signature="10981:11009" ph="{...}" />
-            <marker date="1429313708000" expanded="false" signature="11064:11132" ph="{...}" />
-            <marker date="1429313708000" expanded="false" signature="11187:11473" ph="{...}" />
-            <marker date="1429313708000" expanded="false" signature="11535:11570" ph="{...}" />
-            <marker date="1429313708000" expanded="false" signature="11583:12396" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12366">
+        <state relative-caret-position="18">
           <caret line="744" column="0" lean-forward="false" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Generator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="105" lean-forward="false" selection-start-line="2" selection-start-column="105" selection-end-line="2" selection-end-column="105" />
+        <state relative-caret-position="72">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/StdGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Process.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        <state relative-caret-position="108">
+          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -870,6 +858,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>bin</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
