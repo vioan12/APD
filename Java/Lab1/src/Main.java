@@ -1,40 +1,51 @@
 import mpi.*;
 
-import java.util.LinkedList;
-
 public class Main
 {
-    private static Generator generator;
+    private static int matrixGraph[][];
     public static void main(String[] args)
     {
-        generator = new StdGenerator(Constants.maxNumbers);
-        MPI.Init(args);
-        int buffer[] = new int[2];
-        int size = MPI.COMM_WORLD.Size() ;
-        int myRank = MPI.COMM_WORLD.Rank();
-        int generatedNumber = generator.next();
-        System.out.println("[PROCESS"+ myRank +"]: The generated number is " + generatedNumber);
-        if(myRank > 0){
-            buffer[0] = myRank;
-            buffer[1] = generatedNumber;
-            MPI.COMM_WORLD.Send(buffer,0,2, MPI.INT,0,0);
-        }
-        if(myRank == 0) {
-            int rank = 0;
-            int maxGeneratedNumber = generatedNumber;
-            for (int i = 1; i < size; i++) {
-                MPI.COMM_WORLD.Recv(buffer, 0, 2, MPI.INT, i, 0);
-                if(buffer[1] > maxGeneratedNumber){
-                    maxGeneratedNumber = buffer[1];
-                    rank = i;
-                } else {
-                    if((buffer[1] == maxGeneratedNumber) && (i > rank)) {
-                        rank = i;
+        try {
+            ReadFile readFile = new ReadFile(Constants.FileNameGraph);
+            ConverterMatrix converterMatrix = new ConverterMatrix();
+            matrixGraph = converterMatrix.convert(readFile.read());
+            int myRank, size, buffer[];
+            buffer = new int[3];
+            MPI.Init(args);
+            size = MPI.COMM_WORLD.Size();
+            myRank = MPI.COMM_WORLD.Rank();
+            for (int k = 0; k < matrixGraph.length; k++) {
+                MPI.COMM_WORLD.Barrier();
+                for (int j = 0; j < matrixGraph.length; j++) {
+                    if (matrixGraph[myRank][k] != Constants.INFINITE && matrixGraph[k][j] != Constants.INFINITE) {
+                        if (matrixGraph[myRank][j] > matrixGraph[myRank][k] + matrixGraph[k][j]) {
+                            matrixGraph[myRank][j] = matrixGraph[myRank][k] + matrixGraph[k][j];
+                            buffer[0] = matrixGraph[myRank][j];
+                            buffer[1] = myRank;
+                            buffer[2] = j;
+                            System.out.println("\n[PROCESS" + myRank + "]: Start Bcast");
+                            MPI.COMM_WORLD.Bcast(buffer, 0, 3, MPI.INT, myRank);
+                            System.out.println("\n[PROCESS" + myRank + "]: End Bcast with " + buffer[0]);
+                        }
                     }
                 }
             }
-            System.out.println("PROCESS MASTER is "+ rank +" with the generated number " + maxGeneratedNumber);
+            if(myRank == size-1) {
+                System.out.println("\n[PROCESS" + myRank + "]: ");
+                for (int i = 0; i < matrixGraph.length; i++) {
+                    System.out.println();
+                    for (int j = 0; j < matrixGraph.length; j++) {
+                        if (matrixGraph[i][j] != Constants.INFINITE) {
+                            System.out.print(matrixGraph[i][j] + " ");
+                        } else {
+                            System.out.print("INF ");
+                        }
+                    }
+                }
+            }
+            MPI.Finalize();
+        }catch (Exception exception) {
+            System.out.println(exception.getMessage());
         }
-        MPI.Finalize();
     }
 }

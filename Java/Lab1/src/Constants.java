@@ -1,4 +1,5 @@
 public class Constants
 {
-    public static final int maxNumbers = 100;
+    public static final String FileNameGraph = "Graph.txt";
+    public static final int INFINITE  = Integer.MAX_VALUE;
 }
